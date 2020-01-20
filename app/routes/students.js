@@ -12,7 +12,6 @@ MongoClient.connect('mongodb://localhost:27017', (err, database) => {
 /* GET ALL PRODUCTS */
 router.get('/', (req, res) => {
   db.collection('students').find().toArray((err,result) => {
-      console.log(result.naam)
     if (err) return
     res.render('list',{students:result})
   })
@@ -29,13 +28,12 @@ router.get('/add', (req, res) => {
       if(err) return console.log(err)
       if(result == '') {
       res.render('error') 
-      console.log(result)
     }
       else {
-          console.log(req.body.naam)
+          console.log(req.body.datum)
       db.collection('students').insertOne({
      naam:req.body.naam,
-      geboortedatum:req.body.datum,
+      geboortedatum:new Date(req.body.datum),
       studierichting: req.body.studierichting
     }
       )
