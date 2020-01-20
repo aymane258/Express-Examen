@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+<% students.forEach(student => { %>
+
+    <ul>
+   <li>naam : <%= student.naam %></li>
+   <li>geboortedatum: <%= student.geboortedatum %></li>
+   <li>studierichting: <%= student.studierichting %></li>
+   <li></li>
+</ul>
+<% }) %>
+
+<a href='/add'>Add product</a>&nbsp;&nbsp;
+
+  </body>
+</html>
