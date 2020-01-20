@@ -26,7 +26,7 @@ router.get('/add', (req, res) => {
 
     db.collection('students').find().sort({naam:1}).toArray((err,result) => {
       if(err) return console.log(err)
-      if(result == '') {
+      if(result != '') {
       res.render('error') 
     }
       else {
