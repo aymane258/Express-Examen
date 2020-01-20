@@ -32,6 +32,7 @@ router.get('/add', (req, res) => {
       console.log(result)
     }
       else {
+          console.log(req.body.naam)
       db.collection('students').insertOne({
      naam:req.body.naam,
       geboortedatum:req.body.datum,
